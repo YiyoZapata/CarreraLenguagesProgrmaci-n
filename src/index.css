@@ -1,0 +1,67 @@
+:root{
+    --gamezone-width: 900px;
+    --gamezone-height: 600px;
+    
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gamezone{
+    width: var(--gamezone-width);
+    height: var(--gamezone-height);
+    background: lightgray;
+    background: url(img/fondo.jpg);
+    background-size: 600px;
+    border-right: 8px solid gold;
+    border-left: 2px solid black;
+    display: grid;
+
+}
+
+.lenguage{
+    height: 64px;
+    position: relative;
+    transform: translate(var(--x),var(--y));
+    transition: transform 0.5s linear;
+   
+}
+
+
+
+.ganador{
+    border: 50%;
+    filter:
+        drop-shadow(0  0 2px yellow)
+        drop-shadow(0  0 4px gold)
+        drop-shadow(0  0 6px orange);
+    animation: jump 0.5s alternate infinite;
+}
+
+.empate {
+    transform: translate(var(--x),var(--y)) rotate(70deg);
+}
+
+.perdedor {
+    filter: grayscale(1);
+}
+
+button.start{
+    margin-top: 2em;
+}
+
+
+
+
+@keyframes jump {
+    0% {
+      transform: translate(var(--x), 5px);
+    }
+  
+    100% {
+      transform: translate(var(--x), -5px);
+    }
+  }
